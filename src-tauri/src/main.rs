@@ -12,7 +12,7 @@ fn greet(name: &str) -> String {
 }
 
 #[tauri::command]
-async fn morning(message: String) -> String {
+async fn calcuate(message: String) -> String {
     let result = calculator::calculator(&message);
     return format!("{:.4}", result)
 }
@@ -21,10 +21,8 @@ fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
             greet,
-            morning
+            calcuate
         ])
-
-
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
