@@ -3,6 +3,7 @@ pub fn calculator(query: &str) -> f32 {
     return evaluate_postfix(postfix);
 }
 
+
 fn to_postfix(query: &str) -> Vec<char> {
     let mut stack: Vec<char> = Vec::new();
     let mut output: Vec<char> = Vec::new();
@@ -49,14 +50,37 @@ fn to_postfix(query: &str) -> Vec<char> {
     return output;
 }
 
+
 fn evaluate_postfix(pf: Vec<char>) -> f32 {
     let mut stack: Vec<f32> = Vec::new();
 
     for c in pf {
-        stack.push(0.1);
+        if !c.is_numeric() {
+            let op2 = stack.pop().unwrap();
+            let op1 = stack.pop().unwrap();
+
+            match c {
+                '+' => stack.push(op1+op2),
+                '-' => stack.push(op1-op2),
+                '*' => stack.push(op1*op2),
+                '/' => stack.push(op1/op2),
+                '^' => stack.push(f32::powf(op1, op2)),
+                _ => continue
+            }
+        }
+        else {
+            let c_float = c.to_digit(10);
+            if c_float.is_some() {
+                stack.push(c_float.unwrap() as f32);
+            }
+            else {
+                panic!("Null exception in the evaluate_postfix() stack!")
+            }
+        };
     }
     return stack[0];
 }
+
 
 fn pemdas(c: char) -> i32 {
     match c {
@@ -66,6 +90,7 @@ fn pemdas(c: char) -> i32 {
         _       => return -1
     }
 }
+
 
 fn associatvity(c: char) -> char {
     if c == '^' { 
