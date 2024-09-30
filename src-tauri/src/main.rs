@@ -12,14 +12,9 @@ fn greet(name: &str) -> String {
 }
 
 #[tauri::command]
-async fn morning(_message: String) -> i32 {
-    let mut stack: Vec<i32> = Vec::new();
-
-    stack.push(1);
-
-    let result = calculator::calculator("Hello!");
-
-    return result
+async fn morning(message: String) -> String {
+    let result = calculator::calculator(&message);
+    return format!("{:.4}", result)
 }
 
 fn main() {
