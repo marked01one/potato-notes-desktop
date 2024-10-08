@@ -10,63 +10,63 @@ let numbersList = [0,1,2,3,4,5,6,7,8,9];
 </script>
 
 <template>
-  <div class="container">
-    <h1>Welcome to Tauri!</h1>
+    <div class="container">
+        <h1>Welcome to Tauri!</h1>
 
-    <div class="row">
-      <a href="https://vitejs.dev" target="_blank">
-        <img src="/vite.svg" class="logo vite" alt="Vite logo" />
-      </a>
-      <a href="https://tauri.app" target="_blank">
-        <img src="/tauri.svg" class="logo tauri" alt="Tauri logo" />
-      </a>
-      <a href="https://vuejs.org/" target="_blank">
-        <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-      </a>
+        <div class="row">
+            <a href="https://vitejs.dev" target="_blank">
+                <img src="/vite.svg" class="logo vite" alt="Vite logo" />
+            </a>
+            <a href="https://tauri.app" target="_blank">
+                <img src="/tauri.svg" class="logo tauri" alt="Tauri logo" />
+            </a>
+            <a href="https://vuejs.org/" target="_blank">
+                <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
+            </a>
+        </div>
+      
+        <p>Click on the Tauri, Vite, and Vue logos to learn more.</p>
+      
+        <div v-for="n in numbersList">
+            <TaskCard :card-no="n" />
+        </div>
+      
+        <Greet />
     </div>
-
-    <p>Click on the Tauri, Vite, and Vue logos to learn more.</p>
-
-    <div v-for="n in numbersList">
-      <TaskCard :card-no="n" />
-    </div>
-
-    <Greet />
-  </div>
 </template>
 
 <style scoped>
 .logo.vite:hover {
-  filter: drop-shadow(0 0 2em #747bff);
+    filter: drop-shadow(0 0 2em #747bff);
 }
 
 .logo.vue:hover {
-  filter: drop-shadow(0 0 2em #249b73);
+    filter: drop-shadow(0 0 2em #249b73);
 }
 
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
+    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
 
-  color: #0f0f0f;
-  background-color: #f6f6f6;
+    color: #0f0f0f;
+    background-color: #f6f6f6;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
 }
 
 .container {
-  margin: 0;
-  padding-top: 10vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
+    margin: 0;
+    padding-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
 
 .logo {
