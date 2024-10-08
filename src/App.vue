@@ -3,6 +3,9 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import Greet from "./components/Greet.vue";
 import TaskCard from "./components/TaskCard.vue";
+
+let numbersList = [0,1,2,3,4,5,6,7,8,9];
+
 </script>
 
 <template>
@@ -23,8 +26,8 @@ import TaskCard from "./components/TaskCard.vue";
 
     <p>Click on the Tauri, Vite, and Vue logos to learn more.</p>
 
-    <div>
-      <TaskCard v-for="n in 10" />
+    <div v-for="n in numbersList">
+      <TaskCard :card-no="n" />
     </div>
 
     <Greet />

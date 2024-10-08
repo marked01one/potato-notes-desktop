@@ -11,6 +11,9 @@ dependencies:
   vue:
     specifier: ^3.3.4
     version: 3.5.10(typescript@5.6.2)
+  vuedraggable:
+    specifier: ^4.1.0
+    version: 4.1.0(vue@3.5.10)
 
 devDependencies:
   '@tauri-apps/cli':
@@ -1351,6 +1354,10 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
+  /sortablejs@1.14.0:
+    resolution: {integrity: sha512-pBXvQCs5/33fdN1/39pPL0NZF20LeRbLQ5jtnheIPN9JQAaufGjKdWduZn4U7wCtVuzKhmRkI0DFYHYRbB2H1w==}
+    dev: false
+
   /source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
     engines: {node: '>=0.10.0'}
@@ -1553,6 +1560,15 @@ packages:
       '@vue/server-renderer': 3.5.10(vue@3.5.10)
       '@vue/shared': 3.5.10
       typescript: 5.6.2
+
+  /vuedraggable@4.1.0(vue@3.5.10):
+    resolution: {integrity: sha512-FU5HCWBmsf20GpP3eudURW3WdWTKIbEIQxh9/8GE806hydR9qZqRRxRE3RjqX7PkuLuMQG/A7n3cfj9rCEchww==}
+    peerDependencies:
+      vue: ^3.0.1
+    dependencies:
+      sortablejs: 1.14.0
+      vue: 3.5.10(typescript@5.6.2)
+    dev: false
 
   /which@2.0.2:
     resolution: {integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==}

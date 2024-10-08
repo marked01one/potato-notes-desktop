@@ -1,9 +1,10 @@
 <script setup lang="ts">
+defineProps(['cardNo'])
 </script>
 
 <template>
     <div class="task-card">
-       <p>Hello!</p> 
+       <p>Hello!, card number {{ cardNo }}</p> 
     </div>
 </template>
 
