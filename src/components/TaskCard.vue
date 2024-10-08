@@ -1,12 +1,13 @@
-<script setup lang="ts">
-defineProps(['cardNo'])
-</script>
-
 <template>
     <div class="task-card">
        <p>Hello!, card number {{ cardNo }}</p> 
     </div>
 </template>
+
+<script setup lang="ts">
+defineProps(['cardNo'])
+</script>
+
 
 <style scoped>
 .task-card {
